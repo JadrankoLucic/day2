@@ -13,21 +13,22 @@ public:
   array(int size = 0, double value = 0);
   ~array();
   array(const array& other);
+  array(array&& other);
   int size() const;
   double at(int index) const;
-  array operator = (array const &other)
+  array& operator = (array const &other)
   {
     if (this != &other)
     {
       delete[] p;
-      //v = other.v;
-      //n = other.n;
-      //p = other.p;
-      //p = new double[n];
-      //for (int i = 0; i < n; i++)
-      //{
-      //  p[i] = v;
-      //}
+      v = other.v;
+      n = other.n;
+      p = other.p;
+      p = new double[n];
+      for (int i = 0; i < n; i++)
+      {
+        p[i] = v;
+      }
     }
     return *this;
   }

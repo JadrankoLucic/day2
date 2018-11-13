@@ -34,6 +34,15 @@ array::array(const array& other)
 
 }
 
+array::array(array&& other) {
+  n = other.n;
+  v = other.v;
+  p = other.p;
+  other.p = nullptr;
+  other.n = 0;
+  other.v = 0;
+}
+
 int array::size() const
 {
   return n;;
