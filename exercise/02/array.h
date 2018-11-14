@@ -16,7 +16,7 @@ public:
   array(array&& other);
   int size() const;
   double at(int index) const;
-  array& operator = (array const &other)
+  array& operator= (array const &other)
   {
     if (this != &other)
     {
